@@ -40,6 +40,32 @@
      <string>Close Application</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="openSerialPort">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>120</y>
+      <width>111</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Open SerialPort</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="closeSerialPort">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>150</y>
+      <width>111</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Close SerialPort</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
@@ -47,7 +73,7 @@
      <x>0</x>
      <y>0</y>
      <width>400</width>
-     <height>21</height>
+     <height>26</height>
     </rect>
    </property>
   </widget>

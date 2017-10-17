@@ -1,0 +1,14 @@
+
+debug/LightControl.exe
+build-LightControl-Desktop_Qt_5_5_0_MinGW_32bit-Debug/Makefile.Release
+build-LightControl-Desktop_Qt_5_5_0_MinGW_32bit-Debug/Makefile.Debug
+debug/main.o
+debug/mainwindow.o
+debug/moc_mainwindow.cpp
+debug/moc_mainwindow.o
+LightControl/LightControl.pro.user
+LightControl/LightControl.pro.user.7208a47
+Makefile
+Makefile.Debug
+Makefile.Release
+ui_mainwindow.h
