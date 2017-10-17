@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<<<<<<< HEAD
 <!-- Written by QtCreator 3.4.2, 2017-10-04T23:59:04. -->
-=======
-<!-- Written by QtCreator 3.4.2, 2017-10-03T09:14:43. -->
->>>>>>> 0030e847cb87c970a4b7a1e8ccefc692ed39a429
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
-  <value type="QByteArray">{48e72684-5bb5-4260-b1b9-f01a39e538a7}</value>
+  <value type="QByteArray">{7208a473-72b6-499e-a46b-982f5750f397}</value>
  </data>
  <data>
   <variable>ProjectExplorer.Project.ActiveTarget</variable>
@@ -232,11 +228,7 @@
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">LightControl</value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName"></value>
-<<<<<<< HEAD
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:C:/Users/Raul/Documents/GitHub/Lighting/LightControl/LightControl.pro</value>
-=======
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:C:/Personal/01 - Tesis/02 - GitHub/Develop_01/Lighting/LightControl/LightControl.pro</value>
->>>>>>> 0030e847cb87c970a4b7a1e8ccefc692ed39a429
     <value type="QString" key="Qt4ProjectManager.Qt4RunConfiguration.CommandLineArguments"></value>
     <value type="QString" key="Qt4ProjectManager.Qt4RunConfiguration.ProFile">LightControl.pro</value>
     <value type="bool" key="Qt4ProjectManager.Qt4RunConfiguration.UseDyldImageSuffix">false</value>
