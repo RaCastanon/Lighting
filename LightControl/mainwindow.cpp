@@ -1,9 +1,5 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include <opencv2/opencv.hpp>
-#include <QFileDialog>
-#include <QDebug>
-#include <QtSerialPort/QSerialPort>
 
 using namespace cv;
 
