@@ -29,4 +29,5 @@ LIBS += -L"C:\OpenCV\lib"\
         -llibopencv_core300\
         -llibopencv_imgproc300\
         -llibopencv_imgcodecs300\
-        -llibopencv_highgui300
+        -llibopencv_highgui300\
+        -llibopencv_videoio300

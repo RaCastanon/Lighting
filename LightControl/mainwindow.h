@@ -14,6 +14,7 @@
 #define SERIAL_COMM_ERROR "Error: could not open serial port"
 #define CONNECTION_SUCESSFUL "Serial communication sucessful"
 #define SERIAL_CLOSED "Serial port closed"
+#define NAMED_WINDOW "Selected Image"
 
 namespace Ui {
 class MainWindow;
@@ -41,6 +42,14 @@ private slots:
     void onTimeOut();
 
     void on_stopTimer_clicked();
+
+    void on_openVideoCam_clicked();
+
+    void on_grayScale_clicked();
+
+    void on_middlePoints_clicked();
+
+    void on_getIntensity_clicked();
 
 private:
     Ui::MainWindow *ui;
