@@ -7,6 +7,8 @@
 #include <QFileDialog>
 #include <QDebug>
 #include <QtSerialPort/QSerialPort>
+#include "methods.h"
+#include <QTimer>
 
 //Definitions
 #define SERIAL_COMM_ERROR "Error: could not open serial port"
@@ -33,6 +35,12 @@ private slots:
     void on_openSerialPort_clicked();
 
     void on_closeSerialPort_clicked();
+
+    void on_setTimer_clicked();
+
+    void onTimeOut();
+
+    void on_stopTimer_clicked();
 
 private:
     Ui::MainWindow *ui;
