@@ -8,6 +8,7 @@ QSerialPort serial;
 QTimer *timerOne;
 Mat inputVideo;
 Mat inputImage;
+unsigned int intensityLevel = 0;
 bool serialFlag = false;
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -23,6 +24,7 @@ MainWindow::MainWindow(QWidget *parent) :
     //Disable not required buttons
     ui->grayScale->setDisabled(true);
     ui->middlePoints->setDisabled(true);
+    ui->getIntensity->setDisabled(true);
 }
 
 MainWindow::~MainWindow()
@@ -122,7 +124,7 @@ void MainWindow::on_setTimer_clicked()
     //Verify if timer one is not active
     if(!(timerOne->isActive()))
     {
-        timerOne->start(1000);
+        timerOne->start(2000);
     }
     else
     {
@@ -154,6 +156,15 @@ void MainWindow::on_stopTimer_clicked()
 void MainWindow::onTimeOut()
 {
     setProcess();
+    VideoCapture videoCam;
+    videoCam.open(0);
+    if(videoCam.isOpened())
+    {
+        videoCam >> inputImage;
+        ui->grayScale->clicked();
+        ui->middlePoints->clicked();
+        ui->getIntensity->clicked();
+    }
 }
 
 /* Function name: on_openVideoCam_clicked()
@@ -216,6 +227,8 @@ void MainWindow::on_middlePoints_clicked()
     ui->P_four_rows->setText(QString::number(middlePoints[3][1]));
     ui->P_five_cols->setText(QString::number(middlePoints[4][0]));
     ui->P_five_rows->setText(QString::number(middlePoints[4][1]));
+    //enable visualization of getIntensity button
+    ui->getIntensity->setEnabled(true);
 }
 
 /* Function name: on_getIntensity_clicked()
@@ -224,5 +237,34 @@ void MainWindow::on_middlePoints_clicked()
  */
 void MainWindow::on_getIntensity_clicked()
 {
-
+    Scalar promAreaOne, promAreaTwo, promAreaThree, promAreaFour, promAreaFive;
+    Mat areaOne, areaTwo, areaThree, areaFour, areaFive;
+    //Verify size of the area
+    if((ui->widthArea->text().isEmpty())||(ui->hightArea->text().isEmpty()))
+    {
+        qDebug("Default size asigned");
+        ui->widthArea->setText(QString::number(50));
+        ui->hightArea->setText(QString::number(50));
+    }
+    //Get areas
+    areaOne = inputImage(Rect(middlePoints[0][0], middlePoints[0][1], ui->widthArea->text().toInt(), ui->hightArea->text().toInt()));
+    areaTwo = inputImage(Rect(middlePoints[1][0], middlePoints[1][1], ui->hightArea->text().toInt(), ui->hightArea->text().toInt()));
+    areaThree = inputImage(Rect(middlePoints[2][0], middlePoints[2][1], ui->widthArea->text().toInt(), ui->hightArea->text().toInt()));
+    areaFour = inputImage(Rect(middlePoints[3][0], middlePoints[3][1], ui->widthArea->text().toInt(), ui->hightArea->text().toInt()));
+    areaFive = inputImage(Rect(middlePoints[4][0], middlePoints[4][1], ui->widthArea->text().toInt(), ui->hightArea->text().toInt()));
+    //Get intensity level per area
+    promAreaOne = mean(areaOne);
+    promAreaTwo = mean(areaTwo);
+    promAreaThree = mean(areaThree);
+    promAreaFour = mean(areaFour);
+    promAreaFive = mean(areaFive);
+    //Show results
+    ui->intensityLevel_1->setText(QString::number(promAreaOne[0]));
+    ui->intensityLevel_2->setText(QString::number(promAreaTwo[0]));
+    ui->intensityLevel_3->setText(QString::number(promAreaThree[0]));
+    ui->intensityLevel_4->setText(QString::number(promAreaFour[0]));
+    ui->intensityLevel_5->setText(QString::number(promAreaFive[0]));
+    //Get intensity level mean
+    intensityLevel = (int)((promAreaOne[0] + promAreaTwo[0] + promAreaThree[0] + promAreaFour[0] + promAreaFive[0]) / 5.0);
+    ui->intensityLevel->setText(QString::number(intensityLevel));
 }
