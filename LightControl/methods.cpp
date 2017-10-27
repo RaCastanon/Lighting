@@ -34,3 +34,20 @@ void setMiddlePoints(unsigned int cols, unsigned int rows)
     middlePoints[4][1] = (int)(3*(rows/4.0));
 
 }
+
+/* Function name: fuzzyController(signed int)
+ * Developer:     Raul Castañon
+ * Details:       Get the control signal due a fuzzy controller logic
+ */
+void fuzzyController(signed int p_err)
+{
+    //Get membership degree of the error
+    membershipDegree(p_err);
+
+}
+
+void membershipDegree(signed int p_err)
+{
+
+
+}

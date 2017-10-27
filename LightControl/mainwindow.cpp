@@ -9,7 +9,9 @@ QTimer *timerOne;
 Mat inputVideo;
 Mat inputImage;
 unsigned int intensityLevel = 0;
+unsigned int setPointFromUI = 0;
 bool serialFlag = false;
+signed int error_p = 0;
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -164,6 +166,13 @@ void MainWindow::onTimeOut()
         ui->grayScale->clicked();
         ui->middlePoints->clicked();
         ui->getIntensity->clicked();
+
+        //Get set point from ui
+        enableSetPoint();
+        //Get the error and send it to the controller
+        error_p = setPointFromUI - intensityLevel;
+        fuzzyController(error_p);
+
     }
 }
 
@@ -267,4 +276,19 @@ void MainWindow::on_getIntensity_clicked()
     //Get intensity level mean
     intensityLevel = (int)((promAreaOne[0] + promAreaTwo[0] + promAreaThree[0] + promAreaFour[0] + promAreaFive[0]) / 5.0);
     ui->intensityLevel->setText(QString::number(intensityLevel));
+}
+
+void MainWindow::enableSetPoint(void)
+{
+    //Verify if there is a setPoint
+    if(!(ui->setPoint->text().isEmpty()))
+    {
+        setPointFromUI = ui->setPoint->text().toInt();
+    }
+    //If not put a default value
+    else
+    {
+        ui->setPoint->setText(DEFAULT_TEST_POINT);
+        setPointFromUI = ui->setPoint->text().toInt();
+    }
 }

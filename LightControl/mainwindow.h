@@ -15,6 +15,7 @@
 #define CONNECTION_SUCESSFUL "Serial communication sucessful"
 #define SERIAL_CLOSED "Serial port closed"
 #define NAMED_WINDOW "Selected Image"
+#define DEFAULT_TEST_POINT "180"
 
 namespace Ui {
 class MainWindow;
@@ -50,6 +51,8 @@ private slots:
     void on_middlePoints_clicked();
 
     void on_getIntensity_clicked();
+    //Function Declarations
+    void enableSetPoint(void);
 
 private:
     Ui::MainWindow *ui;
