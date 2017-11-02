@@ -11,6 +11,14 @@
 #define LOW_POSITIVE 128
 #define TOO_POSITIVE 256
 
+//Global variables declarations
+///Proportional error variables
+signed double mu_e_TN = 0.0;
+signed double mu_e_N  = 0.0;
+signed double mu_e_Z  = 0.0;
+signed double mu_e_P  = 0.0;
+signed double mu_e_TP = 0.0;
+
 //Function declaration
 void setProcess(void);
 void setMiddlePoints(unsigned int, unsigned int);

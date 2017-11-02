@@ -46,8 +46,68 @@ void fuzzyController(signed int p_err)
 
 }
 
-void membershipDegree(signed int p_err)
+/* Function name: membershipDegree(signed int)
+ * Developer:     Raul Castañon
+ * Details:       Get the membership degree of the error
+ */
+void membershipDegree(signed int err)
 {
-
-
+    //We have five membership areas for the error, this process is known as fuzzification
+    //First area -> mu_e_TN
+    if ((err >= TOO_NEGATIVE) && (err < LOW_NEGATIVE))
+    {
+        mu_e_TN = ((LOW_NEGATIVE - err)/(LOW_NEGATIVE-TOO_NEGATIVE));
+    }
+    else
+    {
+        mu_e_TN = 0.0;
+    }
+    //Second area -> mu_e_N
+    if ((err >= TOO_NEGATIVE) && (err < LOW_NEGATIVE))
+    {
+        mu_e_N = ((err - TOO_NEGATIVE)/(LOW_NEGATIVE-TOO_NEGATIVE));
+    }
+    else if ((err >= LOW_NEGATIVE) && (err < ZERO))
+    {
+        mu_e_N = ((ZERO - err)/(ZERO - LOW_NEGATIVE));
+    }
+    else
+    {
+        mu_e_N = 0.0;
+    }
+    //Third area -> mu_e_Z
+    if((err >= LOW_NEGATIVE) && (err < ZERO))
+    {
+        mu_e_Z = ((err - LOW_NEGATIVE)/(ZERO - LOW_NEGATIVE));
+    }
+    else if ((err >= ZERO) && (err < LOW_POSITIVE))
+    {
+        mu_e_Z = ((ZERO - err)/(LOW_POSITIVE - ZERO));
+    }
+    else
+    {
+        mu_e_Z = 0.0;
+    }
+    //Fourth area -> mu_e_P
+    if((err >= ZERO) && (err < LOW_POSITIVE))
+    {
+        mu_e_P = ((err - ZERO)/(LOW_POSITIVE - ZERO));
+    }
+    else if((err >= LOW_POSITIVE) && (err < TOO_POSITIVE))
+    {
+        mu_e_P = ((TOO_POSITIVE - err)/(TOO_POSITIVE - LOW_POSITIVE));
+    }
+    else
+    {
+        mu_e_P = 0.0;
+    }
+    //Fifth area -> mu_e_TP
+    if((err >= LOW_POSITIVE) && (err <= TOO_POSITIVE))
+    {
+        mu_e_TP = ((err - LOW_POSITIVE)/(TOO_POSITIVE - LOW_POSITIVE));
+    }
+    else
+    {
+        mu_e_TP = 0.0;
+    }
 }

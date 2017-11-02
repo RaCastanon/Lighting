@@ -278,6 +278,10 @@ void MainWindow::on_getIntensity_clicked()
     ui->intensityLevel->setText(QString::number(intensityLevel));
 }
 
+/* Function name: enableSetPoint()
+ * Developer:     Raul Castañon
+ * Details:       Retrieve set point from UI
+ */
 void MainWindow::enableSetPoint(void)
 {
     //Verify if there is a setPoint
