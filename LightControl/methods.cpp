@@ -204,51 +204,51 @@ void setFuzzyRules(void)
     //First rule
     u_TO[0] = std::min((signed int)mu_e_TN, (signed int)mu_ei_TN);
     //Second rule
-    u_TO[1] = std::min((int)mu_e_TN, (int)mu_ei_N);
+    u_TO[1] = std::min((signed int)mu_e_TN, (signed int)mu_ei_N);
     //Third rule
-    u_TO[2] = std::min(mu_e_TN, mu_ei_Z);
+    u_TO[2] = std::min((signed int)mu_e_TN, (signed int)mu_ei_Z);
     //Fourth rule
-    u_TO[3] = std::min(mu_e_TN, mu_ei_P);
+    u_TO[3] = std::min((signed int)mu_e_TN, (signed int)mu_ei_P);
     //Fifth rule
-    u_TO[4] = std::min(mu_e_TN, mu_ei_TP);
+    u_TO[4] = std::min((signed int)mu_e_TN, (signed int)mu_ei_TP);
     //Sixth rule
-    u_O[0] = std::min(mu_e_N, mu_ei_TN);
+    u_O[0] = std::min((signed int)mu_e_N, (signed int)mu_ei_TN);
     //Seventh rule
-    u_O[1] = std::min(mu_e_N, mu_ei_N);
+    u_O[1] = std::min((signed int)mu_e_N, (signed int)mu_ei_N);
     //Eight rule
-    u_O[2] = std::min(mu_e_N, mu_ei_Z);
+    u_O[2] = std::min((signed int)mu_e_N, (signed int)mu_ei_Z);
     //Nineth rule
-    u_O[3] = std::min(mu_e_N, mu_ei_P);
+    u_O[3] = std::min((signed int)mu_e_N, (signed int)mu_ei_P);
     //Tenth rule
-    u_O[4] = std::min(mu_e_N, mu_ei_TP);
+    u_O[4] = std::min((signed int)mu_e_N, (signed int)mu_ei_TP);
     //Eleventh rule
-    u_Z[0] = std::min(mu_e_Z, mu_ei_TN);
+    u_Z[0] = std::min((signed int)mu_e_Z, (signed int)mu_ei_TN);
     //Twelve rule
-    u_Z[1] = std::min(mu_e_Z, mu_ei_N);
+    u_Z[1] = std::min((signed int)mu_e_Z, (signed int)mu_ei_N);
     //Thirteenth rule
-    u_Z[2] = std::min(mu_e_Z, mu_ei_Z);
+    u_Z[2] = std::min((signed int)mu_e_Z, (signed int)mu_ei_Z);
     //Fourteenth rule
-    u_Z[3] = std::min(mu_e_Z, mu_ei_P);
+    u_Z[3] = std::min((signed int)mu_e_Z, (signed int)mu_ei_P);
     //Fiveteenth rule
-    u_Z[4] = std::min(mu_e_Z, mu_ei_TP);
+    u_Z[4] = std::min((signed int)mu_e_Z, (signed int)mu_ei_TP);
     //Sixteenth rule
-    u_On[0] = std::min(mu_e_P, mu_ei_TN);
+    u_On[0] = std::min((signed int)mu_e_P, (signed int)mu_ei_TN);
     //Seventeenth rule
-    u_On[1] = std::min(mu_e_P, mu_ei_N);
+    u_On[1] = std::min((signed int)mu_e_P, (signed int)mu_ei_N);
     //Eighteenth rule
-    u_On[2] = std::min(mu_e_P, mu_ei_Z);
+    u_On[2] = std::min((signed int)mu_e_P, (signed int)mu_ei_Z);
     //Nineteenth rule
-    u_On[3] = std::min(mu_e_P, mu_ei_P);
+    u_On[3] = std::min((signed int)mu_e_P, (signed int)mu_ei_P);
     //Twenthieth rule
-    u_On[4] = std::min(mu_e_P, mu_ei_TP);
+    u_On[4] = std::min((signed int)mu_e_P, (signed int)mu_ei_TP);
     //Twenty oneth rule
-    u_TOn[0] = std::min(mu_e_TP, mu_ei_TN);
+    u_TOn[0] = std::min((signed int)mu_e_TP, (signed int)mu_ei_TN);
     //Twenty twoth rule
-    u_TOn[1] = std::min(mu_e_TP, mu_ei_N);
+    u_TOn[1] = std::min((signed int)mu_e_TP, (signed int)mu_ei_N);
     //Twenty threeth rule
-    u_TOn[2] = std::min(mu_e_TP, mu_ei_Z);
+    u_TOn[2] = std::min((signed int)mu_e_TP, (signed int)mu_ei_Z);
     //Twenty fourth rule
-    u_TOn[3] = std::min(mu_e_TP, mu_ei_P);
+    u_TOn[3] = std::min((signed int)mu_e_TP, (signed int)mu_ei_P);
     //Twenty fiveth rule
-    u_TOn[4] = std::min(mu_e_TP, mu_ei_TP);
+    u_TOn[4] = std::min((signed int)mu_e_TP, (signed int)mu_ei_TP);
 }
