@@ -12,6 +12,7 @@ unsigned int intensityLevel = 0;
 unsigned int setPointFromUI = 0;
 bool serialFlag = false;
 signed int error_p = 0;
+signed int error_i = 0;
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -171,7 +172,20 @@ void MainWindow::onTimeOut()
         enableSetPoint();
         //Get the error and send it to the controller
         error_p = setPointFromUI - intensityLevel;
-        fuzzyController(error_p);
+        error_i += error_p;
+        if(error_i >= 255)
+        {
+            error_i = 250;
+        }
+        else if(error_i <= -255)
+        {
+            error_i = -250;
+        }
+        else
+        {
+            //do nothing
+        }
+        fuzzyController(error_p, error_i);
 
     }
 }
